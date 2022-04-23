@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Alle Snipsel</h2>
+<ul>
+    {% for snipsel in object_list %}
+    <li><a href="{% url 'snipsel_detail' snipsel.pk %}">{{ snipsel.text }} {{ snipsel.number }}</a></li>
+    {% endfor %}
+</ul>
+<a class="btn btn-success btn-sm" href="{% url 'neue_snipsel' %}">+ neue Snipsel hinzufügen</a>
+{% endblock content %}
