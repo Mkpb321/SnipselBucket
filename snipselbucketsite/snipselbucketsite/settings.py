@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-sm=@1kdui!9_z4&_!@8ri$5%f%b6oe*i@*qiv^1r$!3+b0m2x5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['snipselbucket.pythonanywhere.com']
+ALLOWED_HOSTS = ['snipselbucket.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -122,3 +122,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = '/home/SnipselBucket/SnipselBucket/snipselbucketsite/static'
