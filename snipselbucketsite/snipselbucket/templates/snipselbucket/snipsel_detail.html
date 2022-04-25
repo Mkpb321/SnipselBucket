@@ -1,5 +1,3 @@
-<!-- snipselbucket/templates/snipselbucket/snipsel_detail.html -->
-
 {% extends 'base.html' %}
 
 {% block content %}
@@ -7,6 +5,6 @@
     <p>Text: {{snipsel.text }}</p>
     <p>Number: {{snipsel.number }}</p>
     <a class="btn btn-secondary btn-sm" href="{% url 'snipsel_start' %}">Zurück</a>
-    <a class="btn btn-danger btn-sm" href="#">Löschen</a>
-    <a class="btn btn-success btn-sm" href="#">Update</a>
+    <a class="btn btn-danger btn-sm" href="{% url 'snipsel_delete' snipsel.pk %}">Löschen</a>
+    <a class="btn btn-success btn-sm" href="{% url 'snipsel_update' snipsel.pk %}">Update</a>
 {% endblock content %}

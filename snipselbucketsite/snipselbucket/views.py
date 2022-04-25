@@ -6,6 +6,8 @@ from .models import Snipsel
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic import DetailView
+from django.views.generic import UpdateView
+from django.views.generic import DeleteView
 
 def helloWorld(request):
     return HttpResponse("Hello WorldBucket")
@@ -26,3 +28,13 @@ class SnipselCreate(CreateView):
 class SnipselDetail(DetailView):
     model = Snipsel
     template_name = 'snipselbucket/snipsel_detail.html'
+
+class SnipselUpdate(UpdateView):
+    model = Snipsel
+    template_name = 'snipselbucket/snipsel_update.html'
+    fields = '__all__'
+
+class SnipselDelete(DeleteView):
+    model = Snipsel
+    template_name = 'snipselbucket/snipsel_delete.html'
+    success_url = reverse_lazy('snipsel_start')

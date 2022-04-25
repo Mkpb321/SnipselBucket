@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Snipsel löschen</h2>
+<form action="" method="post">{% csrf_token %}
+    <p>Bist du sicher das du folgende Snipsel löschen möchtest?</p>
+    <p><strong>{{ snipsel.text }} {{ snipsel.number }}</strong></p>
+    <a class="btn btn-secondary btn-sm" href="{% url 'snipsel_detail' snipsel.pk %}">Zurück</a>
+    <button type="submit btn-sm" class="btn btn-danger btn-sm">Löschen</button>
+</form>
+{% endblock content %}
