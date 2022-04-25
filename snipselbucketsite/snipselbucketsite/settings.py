@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-sm=@1kdui!9_z4&_!@8ri$5%f%b6oe*i@*qiv^1r$!3+b0m2x5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['snipselbucket.pythonanywhere.com']
 
 
 # Application definition
