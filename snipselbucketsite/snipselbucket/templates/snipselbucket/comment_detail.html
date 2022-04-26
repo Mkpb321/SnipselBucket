@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Commentdetail</h2>
+    <p>Text: {{comment.text }}</p>
+    <p>Snipsel: {{comment.snipsel }}</p>
+    <a class="btn btn-secondary btn-sm" href="{% url 'comment_list' %}">Zurück</a>
+    <a class="btn btn-danger btn-sm" href="{% url 'comment_delete' comment.pk %}">Delete</a>
+    <a class="btn btn-success btn-sm" href="{% url 'comment_update' comment.pk %}">Update</a>
+{% endblock content %}

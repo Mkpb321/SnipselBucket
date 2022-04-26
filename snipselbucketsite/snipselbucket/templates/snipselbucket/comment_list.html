@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All Comments</h2>
+<ul>
+    {% for comment in object_list %}
+    <li><a href="{% url 'comment_detail' comment.pk %}">{{ comment }}</a></li>
+    {% endfor %}
+</ul>
+<a class="btn btn-success btn-sm" href="{% url 'comment_create' %}">+ add new Comment</a>
+{% endblock content %}
