@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = custom_secrets_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # TODO: not on server or at least defined at 2 places
+DEBUG = environment_specific_settings.DEBUG
 
 ALLOWED_HOSTS = custom_secrets_settings.ALLOWED_HOSTS
 
@@ -75,12 +75,7 @@ WSGI_APPLICATION = 'snipselbucketsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = { # TODO: not on server or at least defined at 2 places
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = environment_specific_settings.DATABASES
 
 
 # Password validation
