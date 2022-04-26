@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from . import custom_secrets_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-sm=@1kdui!9_z4&_!@8ri$5%f%b6oe*i@*qiv^1r$!3+b0m2x5'
+SECRET_KEY = custom_secrets_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # TODO: not on server or at least defined at 2 places
 
-ALLOWED_HOSTS = ['snipselbucket.pythonanywhere.com', '127.0.0.1']
-
+ALLOWED_HOSTS = custom_secrets_settings.ALLOWED_HOSTS
 
 # Application definition
 
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'snipselbucketsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = { # TODO: not on server or at least defined at 2 places
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -104,13 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us' # TODO: maybe change this
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC' # TODO: maybe change this
 
-USE_I18N = True
+USE_I18N = True # TODO: maybe change this
 
-USE_TZ = True
+USE_TZ = True # TODO: maybe change this
 
 
 # Static files (CSS, JavaScript, Images)
