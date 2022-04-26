@@ -28,3 +28,6 @@ if os.name == 'posix':
         }
     }
     STATIC_ROOT = '/home/SnipselBucket/SnipselBucket/snipselbucketsite/static'
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
