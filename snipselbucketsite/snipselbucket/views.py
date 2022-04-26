@@ -11,7 +11,6 @@ from django.views.generic import DeleteView
 import os
 
 def helloWorld(request):
-    import os
     return HttpResponse(os.name)
 
 def hello(request):
