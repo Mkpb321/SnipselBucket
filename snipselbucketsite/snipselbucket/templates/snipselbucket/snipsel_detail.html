@@ -8,4 +8,13 @@
     <a class="btn btn-secondary btn-sm" href="{% url 'snipsel_list' %}">Zurück</a>
     <a class="btn btn-danger btn-sm" href="{% url 'snipsel_delete' snipsel.pk %}">Löschen</a>
     <a class="btn btn-success btn-sm" href="{% url 'snipsel_update' snipsel.pk %}">Update</a>
+    <br><br>
+    <h3>Comments</h3>
+    {% for comment in snipsel.comments.all %}
+    <p>
+        {{ comment.text }} <br>
+        {{ comment.created_at }}
+    </p>
+    {% endfor %}
+    <a class="btn btn-success btn-sm" href="{% url 'comment_create_specific_snipsel' snipsel.pk %}">+ add new Comment</a>
 {% endblock content %}

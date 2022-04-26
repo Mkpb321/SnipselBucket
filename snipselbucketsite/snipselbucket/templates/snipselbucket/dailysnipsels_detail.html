@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Daily Snipsels</h2>
+    {% for snipsel in dailysnipsels.snipsels.all %}
+    <p>
+        <a href="{% url 'snipsel_detail' snipsel.pk %}">
+            {{ snipsel.text }}<br>
+            {{ snipsel.source }}
+        </a>
+    </p>
+    {% endfor %}
+{% endblock content %}

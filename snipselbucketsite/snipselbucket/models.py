@@ -22,3 +22,17 @@ class Comment(models.Model):
         
     def __str__(self):
         return self.text[:10] + "... (" + self.snipsel.text[:10] + ")"
+
+    def get_absolute_url(self): # https://youtu.be/dv1Sm2Rlyao
+        return reverse('comment_detail', args=[str(self.id)])
+
+class DailySnipsels(models.Model):
+    snipsels = models.ManyToManyField(Snipsel)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+        
+    def __str__(self):
+        name = ""
+        for snipsel in self.snipsels.all():
+            name += str(snipsel) + " "
+        return name

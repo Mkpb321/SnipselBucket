@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
 from .views import SnipselList, SnipselCreate, SnipselDetail, SnipselUpdate, SnipselDelete
-from .views import CommentList, CommentCreate, CommentDetail, CommentUpdate, CommentDelete
+from .views import CommentList, CommentCreate, CommentCreateSpecificSnipsel, CommentDetail, CommentUpdate, CommentDelete
+from .views import DailySnipselsDetail
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -14,9 +15,12 @@ urlpatterns = [
     
     path('comment/', CommentList.as_view(), name='comment_list'),
     path('comment/new/', CommentCreate.as_view(), name='comment_create'),
+    path('comment/new/<int:snipselpk>/', CommentCreateSpecificSnipsel.as_view(), name='comment_create_specific_snipsel'),
     path('comment/<int:pk>/', CommentDetail.as_view(), name='comment_detail'),
     path('comment/<int:pk>/update/', CommentUpdate.as_view(), name='comment_update'),
     path('comment/<int:pk>/delete/', CommentDelete.as_view(), name='comment_delete'),
+
+    path('dailysnipsels/<int:pk>/', DailySnipselsDetail.as_view(), name='dailysnipsels_detail'),
 ]
 
 # from django.urls import path
