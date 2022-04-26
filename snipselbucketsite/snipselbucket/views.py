@@ -4,27 +4,21 @@ from django.http import HttpResponse
 from django.views.generic import ListView
 from .models import Snipsel
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-from django.views.generic import DetailView
-from django.views.generic import UpdateView
-from django.views.generic import DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 import os
 
-def helloWorld(request):
-    return HttpResponse(os.name)
+def index(request):
+    return render(request, 'snipselbucket/index.html')
 
-def hello(request):
-    return render(request, 'snipselbucket/hello.html')
-
-class SnipselHome(ListView):
+class SnipselList(ListView):
     model = Snipsel
-    template_name = 'snipselbucket/snipsel_home.html'
+    template_name = 'snipselbucket/snipsel_list.html'
 
 class SnipselCreate(CreateView):
     model = Snipsel
     template_name = 'snipselbucket/snipsel_create.html'
     fields = '__all__'
-    success_url = reverse_lazy('snipsel_start')
+    success_url = reverse_lazy('snipsel_list')
 
 class SnipselDetail(DetailView):
     model = Snipsel
@@ -38,4 +32,10 @@ class SnipselUpdate(UpdateView):
 class SnipselDelete(DeleteView):
     model = Snipsel
     template_name = 'snipselbucket/snipsel_delete.html'
-    success_url = reverse_lazy('snipsel_start')
+    success_url = reverse_lazy('snipsel_list')
+
+# def helloWorld(request):
+#     return HttpResponse(os.name)
+
+# def inde(request):
+#     return render(request, 'snipselbucket/hello.html')

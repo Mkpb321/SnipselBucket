@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mein Projekt</title>
+    <title>SnipselBucket</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
+      <header>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'index' %}">SnipselBucket</a>
+            <a class="navbar-brand" href="{% url 'snipsel_list' %}">All Snipsel</a>
+            <a class="navbar-brand" href="{% url 'snipsel_list' %}">All Comments</a>
+          </nav>
+      </header>
     <div class="container-fluid">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="{% url 'snipsel_start' %}">Django Superkraft</a>
-            </nav>
-        </header>
-        <div class="jumbotron">
+        {% comment %} <div class="jumbotron">
             <h1>Ein CRUD-Projekt in 60 Minuten</h1>
             <h2>Eine einfache Snipsel-App</h2>
-        </div>
+        </div> {% endcomment %}
         {% block content %}
         {% endblock content %}
     </div>

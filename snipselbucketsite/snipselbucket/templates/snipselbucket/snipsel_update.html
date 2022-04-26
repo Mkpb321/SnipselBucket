@@ -4,7 +4,7 @@
 <h2>Neue Snipsele bearbeiten</h2>
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
-    <a class="btn btn-danger btn-sm" href="{% url 'snipsel_start' %}">Abbrechen</a>
+    <a class="btn btn-danger btn-sm" href="{% url 'snipsel_list' %}">Abbrechen</a>
     <button type="reset" class="btn btn-secondary btn-sm">Zurücksetzen</button>
     <button type="submit" class="btn btn-success btn-sm">Speichern</button>
 </form>
