@@ -8,9 +8,11 @@ from django.views.generic import CreateView
 from django.views.generic import DetailView
 from django.views.generic import UpdateView
 from django.views.generic import DeleteView
+import os
 
 def helloWorld(request):
-    return HttpResponse("Hello WorldBucket")
+    import os
+    return HttpResponse(os.name)
 
 def hello(request):
     return render(request, 'snipselbucket/hello.html')
