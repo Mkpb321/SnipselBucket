@@ -116,7 +116,7 @@ def newestDailySnipsels(request):
 
 def kindle(request):
     log = ""
-    with open("kindle/input.json", "r", encoding='utf-8') as f:
+    with open("/home/SnipselBucket/SnipselBucket/snipselbucketsite/kindle/input.json", "r", encoding='utf-8') as f:
         data = json.load(f)
 
     for highlite in data["highlights"]:
