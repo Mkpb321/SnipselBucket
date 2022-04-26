@@ -20,7 +20,8 @@ if os.name == 'nt':
 # Settings on linux server (deployment)
 
 if os.name == 'posix':
-    DEBUG = False
+    # DEBUG = False
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
