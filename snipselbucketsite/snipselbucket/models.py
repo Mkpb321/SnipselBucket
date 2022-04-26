@@ -9,7 +9,7 @@ class Snipsel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
         
     def __str__(self):
-        return self.text[:10] + "... (" + self.source + ")"
+        return self.text[:50] + "... (" + self.source + ")"
 
     def get_absolute_url(self): # https://youtu.be/dv1Sm2Rlyao
         return reverse('snipsel_detail', args=[str(self.id)])
@@ -21,7 +21,7 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
         
     def __str__(self):
-        return self.text[:10] + "... (" + self.snipsel.text[:10] + ")"
+        return self.text[:50] + "... (" + self.snipsel.text[:10] + ")"
 
     def get_absolute_url(self): # https://youtu.be/dv1Sm2Rlyao
         return reverse('comment_detail', args=[str(self.id)])

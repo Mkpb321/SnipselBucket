@@ -4,6 +4,7 @@
 
 ## Costum added ##
 custom_secrets*
+kindle/
 
 ### Django ###
 *.log

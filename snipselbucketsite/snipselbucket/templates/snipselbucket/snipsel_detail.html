@@ -2,9 +2,9 @@
 
 {% block content %}
     <h2>Snipseldetail</h2>
-    <p>Text: {{snipsel.text }}</p>
-    <p>Source: {{snipsel.source }}</p>
-    <p>Weight: {{snipsel.weight }}</p>
+    <p>{{snipsel.text }}</p>
+    <p><br>{{snipsel.source }}</p>
+    <p><br>{{snipsel.weight }}</p>
     <a class="btn btn-secondary btn-sm" href="{% url 'snipsel_list' %}">Zurück</a>
     <a class="btn btn-danger btn-sm" href="{% url 'snipsel_delete' snipsel.pk %}">Löschen</a>
     <a class="btn btn-success btn-sm" href="{% url 'snipsel_update' snipsel.pk %}">Update</a>

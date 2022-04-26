@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>two buttons here</h2>
+<a class="btn btn-success btn-lg" href="{% url 'newestDailySnipsels' %}">newest Daily Snipsels</a>
+<a class="btn btn-secondary btn-lg" href="{% url 'newRandomDailySnipsels' %}">create new random Daily Snipsels</a>
+{% endblock content %}

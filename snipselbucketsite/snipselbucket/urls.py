@@ -21,6 +21,10 @@ urlpatterns = [
     path('comment/<int:pk>/delete/', CommentDelete.as_view(), name='comment_delete'),
 
     path('dailysnipsels/<int:pk>/', DailySnipselsDetail.as_view(), name='dailysnipsels_detail'),
+    path('dailysnipsels/', views.dailySnipsels, name='dailysnipsels'),
+    path('dailysnipsels/newrandom', views.newRandomDailySnipsels, name='newRandomDailySnipsels'),
+    path('dailysnipsels/newest', views.newestDailySnipsels, name='newestDailySnipsels'),
+    path('kindle', views.kindle, name='kindle'),
 ]
 
 # from django.urls import path
